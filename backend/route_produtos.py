@@ -33,10 +33,11 @@ def get_produtos(produto_name,db: Session = Depends(get_db)):
     produto_on_db= db.query(Produtos).filter(Produtos.item == produto_name).first()
     return produto_on_db
 
-@router.get("/listar", description="Listar todos produtos")
-def get_produtos_all(db: Session = Depends(get_db)):
-    produtos= db.query(Produtos).a
+@router.get("/produtos/listar")
+async def get_tarefas(db: Session = Depends(get_db)):
+    produtos= db.query(Produtos).all()
     return produtos
+
 
 @router.delete("/{id}", description="Deletar o produto pelo id")
 def delete_produto(id: int, db: Session = Depends(get_db)):
