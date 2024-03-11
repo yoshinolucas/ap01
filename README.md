@@ -9,7 +9,7 @@
    <br />cd backend
    <br />python -m venv env
    <br />env\Scripts\activate
-   <br />(env)pip install -r requirements.txt
+   <br />(env)pip install -r requirements-dev.txt
    <br />docker compose up -d
    <br />ver se a conexao funciona no dbeaver
 
